@@ -50,13 +50,20 @@ namespace WFP_WPF_UI_Base.Views.Windows
         /// <summary>
         /// Raises the closed event.
         /// </summary>
-        protected override void OnClosed(EventArgs e)
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
-            ConfigHelper.SaveAppConfig(this);
-            base.OnClosed(e);
-
-            // Make sure that closing this window will begin the process of closing the application.
-            Application.Current.Shutdown();
+			System.Windows.MessageBoxResult result = System.Windows.MessageBox.Show(
+				"Voulez-vous vraiment quitter ?", "Avertissement : WPF-UI Base",
+				System.Windows.MessageBoxButton.OKCancel);
+			if (result == System.Windows.MessageBoxResult.Cancel)
+			{
+				e.Cancel = true;
+			}
+			else
+			{
+				Environment.Exit(0); //pour quitter proprement et ne pas garder le processus en arrière plan
+			}
+			base.OnClosing(e);
         }
 
         INavigationView INavigationWindow.GetNavigation()

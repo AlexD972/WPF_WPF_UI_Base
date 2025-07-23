@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -11,14 +11,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wpfui-icon.ico" />
+    <Content Include="wpfui-icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="WPF-UI" Version="4.0.2" />
     <PackageReference Include="WPF-UI.DependencyInjection" Version="4.0.2" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.1" />
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0 "/>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0 " />
   </ItemGroup>
 
   <ItemGroup>

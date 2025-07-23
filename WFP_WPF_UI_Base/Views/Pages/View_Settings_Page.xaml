@@ -20,12 +20,12 @@
         <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
     </Page.Resources>
 
-    <StackPanel>
+    <StackPanel Margin="42">
         <TextBlock
             FontSize="20"
             FontWeight="Medium"
-            Text="Personalization" />
-        <TextBlock Margin="0,12,0,0" Text="Theme" />
+            Text="Personalisation" />
+        <TextBlock Margin="0,12,0,0" Text="Thème" />
         <RadioButton
             Margin="0,12,0,0"
             Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
@@ -45,7 +45,7 @@
             Margin="0,24,0,0"
             FontSize="20"
             FontWeight="Medium"
-            Text="About WFP_WPF_UI_Base" />
+            Text="A propos de WFP_WPF_UI_Base" />
         <TextBlock Margin="0,12,0,0" Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />
     </StackPanel>
 </Page>
